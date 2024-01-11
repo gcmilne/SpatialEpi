@@ -1,0 +1,57 @@
+GRIDCODE,ID,DISTRICT,CASES,POPULATION,PROP_AG
+3,1,Caithness,11,83190,10
+12,2,Sutherland,5,37521,16
+5,3,Ross-Cromarty,15,129271,10
+2,4,Banff-Buchan,39,231337,16
+13,5,Nairn,3,29374,10
+1,6,Skye-Lochalsh,9,28324,16
+10,7,Gorden,20,165554,16
+22,8,Aberdeen,31,583327,16
+19,9,Inverness,9,162867,7
+7,10,Moray,26,245513,10
+17,11,Badenoch,2,27075,10
+16,12,Kincardine,9,111665,16
+21,13,Angus,16,263205,7
+50,14,Dundee,6,547016,1
+15,15,NE Fife,17,185472,7
+29,16,Perth-Kinross,16,346041,10
+43,17,Clackmannan,2,141294,16
+25,18,Kirkcaldy,19,432132,1
+26,19,Dunfermline,15,378946,1
+34,20,Stirling,8,233125,7
+39,21,Dumbarton,6,231227,16
+51,22,Cumbernauld,1,179194,1
+52,23,Bearsden,1,110707,0
+42,24,Falkirk,8,426519,16
+54,25,Strathkelvin,1,246744,1
+36,26,Inverclyde,9,296238,0
+38,27,Monklands,8,319072,1
+45,28,Edinburgh,19,1287561,1
+28,29,East Lothian,10,231185,7
+49,30,Glasgow,28,2316353,0
+30,31,West Lothian,11,382702,10
+44,32,Motherwell,6,449231,0
+41,33,Renfrew,10,617413,1
+33,34,Midlothian,7,249667,10
+53,35,Eastwood,1,146112,1
+48,36,Hamilton,3,312103,1
+4,37,Berwickshire,9,51710,24
+46,38,Kilmarnock,3,238170,7
+47,39,East Kilbride,2,246849,1
+55,40,Tweedale,0,38704,16
+18,41,Ettrick,7,94145,7
+24,42,Clydesdale,7,163818,7
+31,43,Cumnock-Doon,5,139148,7
+20,44,Roxburgh,7,102697,10
+35,45,Kyle-Carrick,11,319316,7
+56,46,Annandale,0,103412,10
+27,47,Nithsdale,7,163703,7
+32,48,Stewartry,3,65448,24
+14,49,Wigtown,8,86444,24
+40,50,Clydebank,4,156924,0
+6,51,Orkney,8,53199,24
+8,52,Shetland,7,62603,7
+9,53,Lochaber,6,59183,7
+11,54,Western Isles,13,87815,7
+23,55,Aygyll-Bute,11,190816,10
+37,56,Cunninghame,11,391513,10
