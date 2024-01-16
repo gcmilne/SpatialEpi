@@ -77,3 +77,39 @@ epi_curve <- as.incidence(count_data$n_cases, count_data$DATE, interval = 1)
 plot(epi_curve) + 
   labs(x="Date", y="Number of cases") + 
   theme_minimal()
+
+
+## Add buffer zone around cases ------------------------------------------------
+
+# Set buffer distance to 5km
+buffer_distance <- 5000
+
+# Create buffer zones around positive cases using st_buffer()
+positive_buffer <- cheshire_fmd %>% 
+  filter(STATUS == "Positive") %>%
+  st_buffer(dist = buffer_distance)
+
+# Merge overlapping buffer zones to create one buffer zone using st_union()
+merged_buffer <- st_union(positive_buffer)
+
+# Visualise buffer zone on map of Cheshire
+ggplot() + 
+  # cheshire map
+  geom_sf(data = cheshire_map, fill="lightgreen", alpha=.5) +
+  # FMD points, coloured by positive status
+  geom_point(data = cheshire_fmd, aes(XCOORD, YCOORD, col=as.factor(STATUS)), shape=16, alpha=.7) + 
+  theme_void() + 
+  # Buffer zones around positive cases
+  geom_sf(data = merged_buffer, fill = "red", alpha = 0.3) +  # Adjust fill and alpha as needed
+  # scale bar
+  annotation_scale(location = "bl", width_hint = 0.5) + 
+  # north arrow
+  annotation_north_arrow(location = "br", which_north = "true", height=unit(1, "cm"), 
+                         width=unit(1, "cm")) + 
+  # set manual colours
+  scale_color_manual(values = RColorBrewer::brewer.pal(2, "Set1")[c(2,1)]) + 
+  labs(col="FMD status")
+
+# Save plot
+ggsave("plots/Cheshire_fmd_points_buffer.pdf", device = cairo_pdf, height = 6, width = 6, 
+       units = "in")
