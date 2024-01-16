@@ -102,3 +102,18 @@ ggsave("plots/scotland_agricultural_industry_map.pdf", plot=agri_map, device=cai
 # cancer cases map
 ggsave("plots/scotland_cancer_map.pdf", plot=cancer_map, device=cairo_pdf, 
        height=6, width=6, units="in")
+
+
+# Broad trends -----------------------------------------------------------------
+
+# Relationship between % working in agriculture & lip cancer cases
+joined_dat %>%
+  group_by(PROP_AG) %>%
+  mutate(mean_cases = mean(CASES)) %>%
+  select(mean_cases, PROP_AG) %>%
+  distinct() %>%
+  ggplot(aes(PROP_AG, mean_cases)) + 
+  geom_point(size=5) + 
+  labs(x="Proportion in agricultural industry (%)", y="Mean case number") +
+  theme_minimal()
+
